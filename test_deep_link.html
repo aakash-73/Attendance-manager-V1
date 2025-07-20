@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Deep Link</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .test-link {
+            display: block;
+            background: #007bff;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+        .test-link:hover {
+            background: #0056b3;
+        }
+        .info {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .code {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 3px;
+            font-family: monospace;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Deep Link Test for Attendance Manager</h1>
+        
+        <div class="info">
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Make sure your Android app is installed on your device/emulator</li>
+                <li>Click the test link below</li>
+                <li>Your device should prompt you to open the link with the Attendance Manager app</li>
+                <li>The app should open directly to the Reset New Password screen with the email pre-filled</li>
+            </ol>
+        </div>
+
+        <a href="http://Attendance_Manager/app1/reset-password?email=test@example.com" class="test-link">
+            🔗 Test Deep Link (test@example.com)
+        </a>
+
+        <a href="http://Attendance_Manager/app1/reset-password?email=user@company.com" class="test-link">
+            🔗 Test Deep Link (user@company.com)
+        </a>
+
+        <div class="info">
+            <h3>Deep Link Format:</h3>
+            <div class="code">
+                http://Attendance_Manager/app1/reset-password?email={user_email}
+            </div>
+        </div>
+
+        <div class="info">
+            <h3>What happens when the link is clicked:</h3>
+            <ul>
+                <li>Android checks if any app can handle the URL scheme</li>
+                <li>Your Attendance Manager app is registered to handle URLs with host "Attendance_Manager"</li>
+                <li>The app opens and navigates directly to the ResetNewPasswordScreen</li>
+                <li>The email parameter is extracted and passed to the screen</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

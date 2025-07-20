@@ -1,0 +1,9 @@
+adb shell
+run-as com.projects.attendancemanager
+cd /data/data/com.projects.attendancemanager/databases
+sqlite3 attendance_manager_database
+.tables
+SELECT name FROM sqlite_master WHERE type='table';
+SELECT * FROM users;
+
+update this update the password in local db as well
